@@ -1,22 +1,13 @@
-import axios from "axios";
+
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../page.module.css";
 
-export async function getData() {
-  // 调用外部 API 获取内容
-  const result = await axios
-    .post("http://localhost:3000/api/ssr")
-    .then((res: any) => {
-      return res?.data;
-    });
+export default function SSRPage() {
   
-  return result.data
-}
+  const imgTitle = "新疆库俄铁路"
 
-export default async function SSRPage() {
-  
-  const { imgTitle, imgUrl } = await getData();
+  const imgUrl =  "https://p0.meituan.net/scarlett/436ab52281f3f5033f77a48f5c12bd671009047.jpg"
   
   return (
     <div className={styles.container}>
@@ -28,12 +19,12 @@ export default async function SSRPage() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          CSR <p> getServerSideProps</p>
+          CSR <p>前端渲染</p>
         </h1>
 
         <p className={styles.description}>
           <code className={styles.code}>
-            服务端执行getServerSideProps，并把返回的数据传递给组件去渲染
+            请求接口，并把返回的数据传递给组件去渲染
           </code>
         </p>
 
