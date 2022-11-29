@@ -49,4 +49,9 @@ export const routerList = [
         content: "Link",
         src: "/page/link",
     },
+    {
+        title: "组件 next/script",
+        content: "Script",
+        src: "/page/script",
+    },
 ];
