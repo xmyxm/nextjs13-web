@@ -6,7 +6,7 @@ import { routerList } from "../config/router";
 export default function Home() {
     return (
         <div className={styles.container}>
-            <Header />
+            <Header title="Next App" />
             <main className={styles.main}>
                 <h1 className={styles.title}>
                     Welcome to <a href="https://nextjs.org">Next.js!</a>
