@@ -5,6 +5,11 @@ export const routerList = [
         src: "page/rank/1",
     },
     {
+        title: "捕获路由",
+        content: "动态API示例",
+        src: "api/dynamic",
+    },
+    {
         title: "CSR",
         content: "客户端渲染页面示例",
         src: "/page/csr",
@@ -32,7 +37,7 @@ export const routerList = [
     {
         title: "魔法渲染",
         content: "getStaticProps",
-        src: "/magic",
+        src: "/page/magic",
     },
     {
         title: "组件 next/image",
