@@ -1,18 +1,39 @@
 import { useEffect, useState } from "react";
-import Header from "../../components/header";
-import Footer from "../../components/footer";
-import styles from "../../styles/Home.module.css";
-import docList, { bookInfoType } from "../../util/docs";
-import log from "../../util/print-log";
+import Header from "../../../components/header";
+import Footer from "../../../components/footer";
+import styles from "../../../styles/Home.module.css";
+import docList, { bookInfoType } from "../../../util/docs";
+import log from "../../../util/print-log";
 
 type propsType = {
     docInfo: bookInfoType;
 };
 
-export async function getStaticProps() {
+export async function getStaticPaths() {
+    // 返回该动态路由可能会渲染的页面数据，比如 params.id
+    const paths = [
+        {
+            params: { id: "0" },
+        },
+        {
+            params: { id: "1" },
+        },
+        {
+            params: { id: "2" },
+        },
+    ];
+    return {
+        paths,
+        // 命中尚未生成静态页面的路由直接返回 404 页面
+        fallback: false,
+    };
+}
+
+export async function getStaticProps({ params }: { params: { id: string } }) {
     // 在构建时将接收到 `posts` 参数
-    log.warn(`ISR 执行 ${Date.now()}`);
-    return { props: { docInfo: docList[Date.now() % 3] }, revalidate: 4 };
+    log.warn(`动态路径 SSG 执行 ${Date.now()}`);
+    const docInfo: bookInfoType = docList[Number(params.id)];
+    return { props: { docInfo }, revalidate: 4 };
 }
 
 export default function SSGPage({ docInfo }: propsType) {

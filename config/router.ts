@@ -25,9 +25,9 @@ export const routerList = [
         src: "/page/isr",
     },
     {
-        title: "动态SSG",
+        title: "动态路径 SSG",
         content: "动态生成静态页面示例",
-        src: "/doc/1",
+        src: "/page/book/1",
     },
     {
         title: "魔法渲染",
