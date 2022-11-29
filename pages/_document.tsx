@@ -6,6 +6,7 @@ import Document, {
     DocumentContext,
     DocumentInitialProps,
 } from "next/document";
+import log from "../util/print-log";
 
 interface IProps extends DocumentInitialProps {
     bodyClassName: string;
@@ -15,7 +16,7 @@ export default class AppDocument extends Document<IProps> {
     static async getInitialProps(ctx: DocumentContext): Promise<IProps> {
         const props = await Document.getInitialProps(ctx);
 
-        console.log(`执行 Document getInitialProps ${Date.now()}`);
+        log.warn(`执行 Document getInitialProps ${Date.now()}`);
 
         return { ...props, bodyClassName: "body-test" };
     }

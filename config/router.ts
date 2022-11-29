@@ -2,7 +2,7 @@ export const routerList = [
     {
         title: "动态路由",
         content: "动态页面示例",
-        src: "/num/1",
+        src: "page/rank/1",
     },
     {
         title: "CSR",
@@ -17,17 +17,17 @@ export const routerList = [
     {
         title: "SSG",
         content: "静态生成示例",
-        src: "/ssg",
+        src: "/page/ssg",
+    },
+    {
+        title: "ISR",
+        content: "增量静态生成",
+        src: "/page/isr",
     },
     {
         title: "动态SSG",
         content: "动态生成静态页面示例",
         src: "/doc/1",
-    },
-    {
-        title: "ISR",
-        content: "增量静态生成",
-        src: "/isr",
     },
     {
         title: "魔法渲染",

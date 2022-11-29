@@ -10,6 +10,12 @@ const nextConfig = {
                 port: "",
                 pathname: "/scarlett/**",
             },
+            {
+                protocol: "https",
+                hostname: "qqweb.top",
+                port: "",
+                pathname: "/other/xinjiang/**",
+            },
         ],
     },
 };

@@ -4,6 +4,7 @@ import Footer from "../../components/footer";
 import styles from "../../styles/Home.module.css";
 import maxImgUrla from "../../public/a.jpeg";
 import maxImgUrlb from "../../public/b.jpeg";
+import maxImgUrlc from "../../public/c.jpg";
 
 export default function ImagePage() {
     return (
@@ -20,7 +21,15 @@ export default function ImagePage() {
                 </p>
 
                 <div className={styles.grid}>
-                    <a className={styles.card}>
+                    <a className={styles.cardmax}>
+                        <h2>武汉长江大桥 &rarr;</h2>
+                        <Image
+                            src={maxImgUrla}
+                            alt="桥"
+                            width={800}
+                            height={600}
+                            placeholder="blur"
+                        />
                         <h2>新疆库俄铁路 &rarr;</h2>
                         <Image
                             src={maxImgUrlb}
@@ -29,12 +38,12 @@ export default function ImagePage() {
                             height={512.4}
                             placeholder="blur"
                         />
-                        <h2>武汉长江大桥 &rarr;</h2>
+                        <h2>新疆五彩滩 &rarr;</h2>
                         <Image
-                            src={maxImgUrla}
-                            alt="桥"
-                            width={800}
-                            height={600}
+                            src={maxImgUrlc}
+                            alt="河"
+                            width={768}
+                            height={512.4}
                             placeholder="blur"
                         />
                     </a>
