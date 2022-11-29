@@ -10,7 +10,7 @@ export default function Picture(props: propsType) {
 
     return (
         <div className={styles.pictureBox}>
-            <Image src={imgUrl} alt="picture" width={400} height={300} />
+            <Image src={imgUrl} alt="picture-ts" width={400} height={300} />
         </div>
     );
 }
