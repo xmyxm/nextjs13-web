@@ -44,13 +44,13 @@ export default function SSRPage({ data }: propsType) {
                 </p>
 
                 <div className={styles.grid}>
-                    <a className={styles.card}>
+                    <a className={styles.cardmax}>
                         <h2>{imgTitle} &rarr;</h2>
                         <Image
                             src={imgUrl}
                             alt={imgTitle}
-                            width={256}
-                            height={171}
+                            width={640}
+                            height={427}
                         />
                     </a>
                 </div>

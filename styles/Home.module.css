@@ -57,7 +57,7 @@
   max-width: 1000px;
 }
 
-.card {
+.card, .cardmax {
   margin: 1rem;
   padding: 1.5rem;
   text-align: left;
@@ -66,7 +66,14 @@
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.card {
   max-width: 300px;
+}
+
+.cardmax {
+  max-width: 800px;
 }
 
 .card:hover,
