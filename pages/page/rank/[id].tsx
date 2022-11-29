@@ -3,9 +3,11 @@ import Script from "next/script";
 import Header from "../../../components/header";
 import Footer from "../../../components/footer";
 import styles from "../../../styles/Home.module.css";
+import { sceneryImgList } from "../../../config/imgList";
 
 type propsType = {
-    sort: number;
+    id: number;
+    imgUrl: string;
 };
 
 export async function getServerSideProps({
@@ -13,19 +15,21 @@ export async function getServerSideProps({
 }: {
     params: { id: string };
 }) {
+    const id = Number(params.id || "1");
+    if (id > sceneryImgList.length) {
+        return {
+            redirect: {
+                destination: "/page/rank/1",
+                permanent: false,
+            },
+        };
+    }
+    const imgUrl = sceneryImgList[id - 1];
     // 在构建时将接收到 `posts` 参数
-    return { props: { sort: Number(params.id || "0") } };
+    return { props: { id, imgUrl } };
 }
 
-export default function SSRPage({ sort }: propsType) {
-    const imgList: string[] = [
-        "https://qqweb.top/other/xinjiang/391624848545_.pic.jpg",
-        "https://qqweb.top/other/xinjiang/411624848635_.pic.jpg",
-        "https://qqweb.top/other/xinjiang/431624848636_.pic.jpg",
-        "https://qqweb.top/other/xinjiang/341624848545_.pic.jpg",
-    ];
-    const imgUrl = imgList[sort % imgList.length];
-
+export default function SSRPage({ id, imgUrl }: propsType) {
     return (
         <div className={styles.container}>
             <Header title="动态ID页面" />
@@ -37,7 +41,7 @@ export default function SSRPage({ sort }: propsType) {
 
                 <div className={styles.grid}>
                     <a className={styles.cardmax}>
-                        <h2>动态ID：{sort} &rarr;</h2>
+                        <h2>动态ID：{id} &rarr;</h2>
                         <Image
                             src={imgUrl}
                             alt="景色"

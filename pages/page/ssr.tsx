@@ -1,5 +1,6 @@
 import axios from "axios";
 import Image from "next/image";
+import type { NextApiResponse } from "next";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import styles from "../../styles/Home.module.css";
@@ -14,11 +15,15 @@ type propsType = {
     data: dataType;
 };
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context: { res: NextApiResponse }) {
+    const { res } = context;
+
+    res.setHeader("nextjs", `test-${Date.now()}`);
+
     const result = await axios
         .post("http://localhost:3000/api/ssrdata")
-        .then(res => {
-            return res?.data;
+        .then(response => {
+            return response?.data;
         });
     const { data } = result;
 
