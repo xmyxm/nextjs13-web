@@ -20,16 +20,17 @@ export default function ImagePage() {
 
                 <div className={styles.grid}>
                     <a className={styles.cardmax}>
+                        <h2>4 种脚本加载策略: </h2>
+                        <p>
+                            beforeInteractive：在任何 Next.js
+                            代码之前和任何页面注水发生之前加载
+                        </p>
+                        <p>afterInteractive：页面注水发生之后加载</p>
+                        <p>lazyOnload：在浏览器空闲时间加载</p>
+                        <p>worker：加载到 web worker 中</p>
                         <Script id="show-banner" strategy="lazyOnload">
                             {`document.body.style.backgroundColor = '#fafafa'`}
                         </Script>
-                        <h2>
-                            beforeInteractive：在任何 Next.js
-                            代码之前和任何页面注水发生之前加载
-                        </h2>
-                        <h2>afterInteractive：页面注水发生之后加载</h2>
-                        <h2>lazyOnload：在浏览器空闲时间加载</h2>
-                        <h2>worker：加载到 web worker 中</h2>
                         <Script
                             id="stripe-js"
                             src="https://analytics.meituan.net/analytics.js"
