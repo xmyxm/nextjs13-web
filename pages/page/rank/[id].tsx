@@ -29,6 +29,7 @@ export default function SSRPage({ sort }: propsType) {
     return (
         <div className={styles.container}>
             <Header title="动态ID页面" />
+
             <main className={styles.main}>
                 <h1 className={styles.title}>
                     体验 <a href="https://nextjs.org">动态ID</a>
@@ -48,6 +49,7 @@ export default function SSRPage({ sort }: propsType) {
             </main>
 
             <Footer />
+
             <Script
                 src="https://connect.facebook.net/en_US/sdk.js"
                 strategy="lazyOnload"

@@ -7,7 +7,7 @@ export const routerList = [
     {
         title: "CSR",
         content: "客户端渲染页面示例",
-        src: "/csr",
+        src: "/page/csr",
     },
     {
         title: "SSR",

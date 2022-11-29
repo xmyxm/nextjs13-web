@@ -1,0 +1,20 @@
+.pictureBox {
+  position: relative;
+  padding: 6px;
+  border-radius: 2px;
+  box-shadow: 1px 12px 14px rgba(0, 0, 0, .5);
+  background: white;
+}
+
+.pictureBox::after {
+  content: '';
+  position: absolute;
+  z-index: -1; /* hide shadow behind image */
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+  width: 70%;
+  left: 15%; /* one half of the remaining 30% */
+  height: 100px;
+  bottom: 0;
+}
+
+
