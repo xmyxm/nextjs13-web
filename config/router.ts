@@ -34,4 +34,9 @@ export const routerList = [
         content: "getStaticProps",
         src: "/magic",
     },
+    {
+        title: "组件 next/image",
+        content: "Image",
+        src: "/page/img",
+    },
 ];
