@@ -44,4 +44,9 @@ export const routerList = [
         content: "Image",
         src: "/page/img",
     },
+    {
+        title: "组件 next/link",
+        content: "Link",
+        src: "/page/link",
+    },
 ];
